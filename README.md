@@ -5,7 +5,7 @@ This was produced by doing:
 1. https://docs.nestjs.com/first-steps
 2. Writing a sample express app in `app.js`.
 2. Wiring up that express app in the bootstrap function in `wireSampleExpressAppUnderRootOfNestApp` in `src/main.ts`.
-3. Changing `app.controler.ts` path from default `/` to `/some_nest_controller` so root path is free for express app and did a tweak to returned text.
+3. Changing `app.controler.ts` path from default `/` to `/some_nest_controller` so root path is free for express app and a tweak to returned text.
 4. Added `"allowJs": true` to `tsconfig.json` so JS files imported from TS files are included in the built bundle.
 
 ### Run
