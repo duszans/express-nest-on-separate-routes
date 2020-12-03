@@ -17,4 +17,4 @@ This was produced by doing:
 Import in `src/main.ts` a desired express app instead of the sample one. As a result that app should be working as it was before, but additional path `/some_nest_controller` will be available to the nestjs controller. Other nestjs controllers may be added as needed.
 
 ### Disclaimer
-This is just a simple non-production ready PoC. Not tested with big real world expressjs app. It's purpose is to test it out with an existing expressjs app to verify it doesn't introduce any regressions and nestjs works as intended in this case. 
+This is just a simple non-production ready PoC. Not tested with big real world expressjs app. It's purpose is to show technical details how this can be done in a simple way, so those can be tested with an existing expressjs app to verify it doesn't introduce any regressions and nestjs works as intended. 
