@@ -4,15 +4,18 @@ import * as express from 'express';
 
 import { AppModule } from './app.module';
 
+bootstrap();
+
 async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
+  addExpressAppToNestApp(app);
+  await app.listen(3000);
+}
 
+function addExpressAppToNestApp(nestApp: NestExpressApplication) {
   const router = express();
   router.get('/', (req, res) => {
     res.send('Hello from express!');
   });
-  app.use('/express', router);
-
-  await app.listen(3000);
+  nestApp.use('/express', router);
 }
-bootstrap();
