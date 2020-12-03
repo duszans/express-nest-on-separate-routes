@@ -11,7 +11,7 @@ This was produced by doing:
 ### Run
 1. `npm run start` (or `yarn start`)
 2. go to `localhost:3000/` or `localhost:3000/another_express_path` to use express
-3. go to `localhost:3000/nest` to use nestjs controller
+3. go to `localhost:3000/some_nest_controller` to use nestjs controller
 
 ### Usage in an existing express app
 Import in `src/main.ts` a desired express app instead of the sample one. As a result that app should be working as it was before, but additional path `nest` will be available to the nestjs controller. Other nestjs controllers may be added as needed.
