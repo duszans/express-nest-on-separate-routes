@@ -8,14 +8,24 @@ bootstrap();
 
 async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
-  addExpressAppToNestApp(app);
+  wireSampleExpressAppUnderRootOfNestApp(app);
   await app.listen(3000);
 }
 
-function addExpressAppToNestApp(nestApp: NestExpressApplication) {
+function wireSampleExpressAppUnderRootOfNestApp(nestApp: NestExpressApplication) {
+  nestApp.use('/', createSampleExpressApp());
+}
+
+function createSampleExpressApp() {
   const expressApp = express();
   expressApp.get('/', (req, res) => {
-    res.send('Hello from express!');
+    res.send('Hello from express - first path! It is a showcase that it can be on root path for an entire app');
   });
-  nestApp.use('/express', expressApp);
+  expressApp.get('/another_express_path', (req, res) => {
+    res.send(
+      'Hello from express! ' +
+        'It is just showing how to add another routes - just as typically with expressjs.',
+    );
+  });
+  return expressApp;
 }
