@@ -13,9 +13,9 @@ async function bootstrap() {
 }
 
 function addExpressAppToNestApp(nestApp: NestExpressApplication) {
-  const router = express();
-  router.get('/', (req, res) => {
+  const expressApp = express();
+  expressApp.get('/', (req, res) => {
     res.send('Hello from express!');
   });
-  nestApp.use('/express', router);
+  nestApp.use('/express', expressApp);
 }
