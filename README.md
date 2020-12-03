@@ -4,7 +4,8 @@ PoC showing how to have an expressjs application under certain path while having
 This was produced by doing:
 1. https://docs.nestjs.com/first-steps
 2. Wiring up express in the bootstrap function in `addExpressAppToNestApp` in `src/main.ts`.
-3. Changing `app.controler.ts` path from default `/` to `/nest`.  
+3. Changing `app.controler.ts` path from default `/` to `/nest`.
+4. Added `"allowJs": true` to `tsconfig.json` so JS files imported from TS files are included in the built bundle.
 
 ### Run
 
